@@ -41,7 +41,7 @@ local directory_hl_nsid = n.create_namespace('__ccs_hls_namespace_directory___')
 local function calc_col_width()
   local col_width
   for i = 1, user_opts.max_col_num do
-    local test_width = math.floor(window_width / i)
+    local test_width = math.floor(user_opts.window_width / i)
     if test_width <= user_opts.min_col_width then
       return col_width
     else

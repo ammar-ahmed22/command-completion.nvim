@@ -24,6 +24,7 @@ require('command-completion').setup {
                   -- see `:help nvim_open_win()` for available options (e.g. 'single', 'double', etc.)
     max_col_num = 5, -- Maximum number of columns to display in the completion window
     min_col_width = 20, -- Minimum width of completion window columns
+    window_width = vim.o.columns, -- Width of the window (defaults to full width)
     use_matchfuzzy = true, -- Whether or not to use `matchfuzzy()` (see `:help matchfuzzy()`) 
                            -- to order completion results
     highlight_selection = true, -- Whether or not to highlight the currently

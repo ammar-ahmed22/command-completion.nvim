@@ -60,7 +60,7 @@ local function open_and_setup_win(height)
     relative = 'editor',
     border = user_opts.border,
     style = 'minimal',
-    width = vim.o.columns,
+    width = 10,
     height = height,
     row = vim.o.lines - 2,
     col = 0,

@@ -22,6 +22,7 @@ local user_opts = {
   border = nil,
   max_col_num = 5,
   min_col_width = 20,
+  window_width = vim.o.columns,
   use_matchfuzzy = true,
   highlight_selection = true,
   highlight_directories = true,
@@ -40,7 +41,7 @@ local directory_hl_nsid = n.create_namespace('__ccs_hls_namespace_directory___')
 local function calc_col_width()
   local col_width
   for i = 1, user_opts.max_col_num do
-    local test_width = math.floor(vim.o.columns / i)
+    local test_width = math.floor(window_width / i)
     if test_width <= user_opts.min_col_width then
       return col_width
     else
@@ -60,7 +61,7 @@ local function open_and_setup_win(height)
     relative = 'editor',
     border = user_opts.border,
     style = 'minimal',
-    width = 10,
+    width = user_opts.window_width,
     height = height,
     row = vim.o.lines - 2,
     col = 0,
